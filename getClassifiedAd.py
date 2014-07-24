@@ -1,0 +1,30 @@
+import urllib2
+import urllib
+import hashlib
+import json
+
+def getAd(id):
+	apiURL = "http://api.olx.ph/index.php/classifieds+api+getClassifiedAd"
+	apiKey = "06d723f5476b19a10b659b0c86beed0af38c72d9"
+	apiSecret = "0d0e7844a78f5e4ccd67a26c0dfe17593b679add"
+	adsId = str(id)
+	#hash
+	m = hashlib.md5()
+	m.update(apiKey + adsId + apiSecret)
+	hashStr = m.hexdigest()
+	version = '1.0'
+	offset = '0'
+	type = '1'
+	data = { 'adsId' : adsId, 'hash' : hashStr, 'version' : version, 'offset' : offset, 'type' : type, 'apiKey' : apiKey}
+	data = urllib.urlencode(data)
+	req = urllib2.Request(apiURL, data)
+	response = urllib2.urlopen(req)
+	result = response.read()
+	return result
+	
+	
+id = raw_input("Please Enter an Ad ID: ")
+from StringIO import StringIO
+inf = getAd(id)
+inf = StringIO(inf)
+print json.load(inf)
