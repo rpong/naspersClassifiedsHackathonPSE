@@ -6,7 +6,7 @@ import json
 def getAd(id):
 	apiURL = "http://api.olx.ph/index.php/classifieds+api+getClassifiedAd"
 	apiKey = "0c789e7051ac8240afe54db253bc67569a822031"
-	apiSecret = "0d0e7844a78f5e4ccd67a26c0dfe17593b679add"
+	apiSecret = "90b265e40c2dcbc4c9052e96872748322b1f099d"
 	adsId = str(id)
 	#hash
 	m = hashlib.md5()
