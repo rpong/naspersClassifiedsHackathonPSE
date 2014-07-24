@@ -1,6 +1,6 @@
 <?php
 $apiURL = "http://api.olx.ph/index.php/get+price+range"; 
-$APIKey = "06d723f5476b19a10b659b0c86beed0af38c72d9"; 
+$APIKey = "0c789e7051ac8240afe54db253bc67569a822031"; 
 $APISecret = "0d0e7844a78f5e4ccd67a26c0dfe17593b679add"; 
 
 $keyword = 'cbr 150';
